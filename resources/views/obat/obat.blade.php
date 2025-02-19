@@ -20,30 +20,30 @@
       <br>
     @endif
 
-  <a href="{{ route('biodata.create') }}"  class="btn btn-primary">Buat Baru</a><br><br>
+  <a href="{{ route('obat.create') }}"  class="btn btn-primary">Buat Baru</a><br><br>
 
 
   <table class="table">
     <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">Nama</th>
-        <th scope="col">Alamat</th>
-        <th scope="col">Umur</th>
+        <th scope="col">Nama Obat</th>
+        <th scope="col">Merk</th>
+        <th scope="col">Suplier</th>
         <th scope="col">Aksi</th>
       </tr>
     </thead>
     <tbody>
-        @foreach ($biodata as $item)
+        @foreach ($obat as $item)
 
         <tr>
             <th scope="row">{{ $loop->iteration }}</th>
-            <td>{{ $item->Nama }}</td>
-            <td>{{ $item->Alamat }}</td>
-            <td>{{ $item->Umur }}</td>
+            <td>{{ $item->Nama_Obat }}</td>
+            <td>{{ $item->Merk }}</td>
+            <td>{{ $item->Suplier }}</td>
             <td>
-             <form onsubmit="return confirm('Apakah anda yakin menghapus data ini?');" action="{{ route('biodata.delete', $item->id) }}" method="POST">
-                <a class="btn btn-primary" href="{{ route('biodata.edit', $item->id) }}">Edit</a>
+             <form onsubmit="return confirm('Apakah anda yakin menghapus data ini?');" action="{{ route('obat.delete', $item->id) }}" method="POST">
+                <a class="btn btn-primary" href="{{ route('obat.edit', $item->id) }}">Edit</a>
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-sm btn-danger">HAPUS </button>
@@ -56,7 +56,7 @@
     </tbody>
   </table>
 
-{{ $biodata->links() }}
+{{ $obat->links() }}
 
 </div>
 

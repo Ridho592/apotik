@@ -4,12 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Biodata extends Model
+class Obat extends Model
 {
     protected $fillable = [
-        'Nama',
-        'Umur',
-        'Alamat',
+        'Nama Obat',
+        'Merk',
+        'Suplier',
     ];
-
 }
